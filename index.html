@@ -1,18 +1,85 @@
-<html>
-	<head>
-		<script src="js/mail-generator.js"></script>
-		<link href="css/style.css" rel="stylesheet" media="screen">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>geemails</title>
+    <link href="css/style.css" rel="stylesheet" media="screen">
     <script>
       window.onload = function(){
+
+      function engageSender(){
+          var bel = document.getElementById("firstRow");
+          var belInner = bel.innerHTML;
+          bel.innerHTML = generateMessage().sender;
+          document.getElementById("sender").appendChild(bel);
+        }
+
+        
+        document.getElementById("getEmail").addEventListener('click', engageSender, false);
+
+
+        function engageDate(){
+          var el = document.getElementById("firstRow");
+          var elInner = el.innerHTML;
+          el.innerHTML = generateMessage().date;
+          document.getElementById("date").appendChild(el);
+        };
+
+        function unlock(){
+          engageSender();
+          engageDate();
+        };
+
+
+        document.getElementById("getEmail").addEventListener('click', unlock, false);
+
+        
+      
+        
+
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
         
       };
     </script>
-	</head>
-	<body>
-		<div class="container" id="main">
-			Build Me!
-		</div>
-	</body>
+  </head>
+  <body>
+    <div class="container" id="main">
+      <body>
+    <div id="title">
+      <h2>GEE MAIL</h2>
+    </div>
+    <div>
+      <button class ="actionItem" id="getEmail" >Get Mail </button>
+    </div>
+    
+    <div class="container" id="content">
+
+      <table class="inbox" id="inboxTable" align=center>
+        <tr>
+          <td id="tableTitle"><em>Date</em></td>
+          <td id="tableTitle"><em>Sender</em></td>
+          <td id="tableTitle"><em>Subject</em></td>
+        </tr>
+        <tr class="row" id="firstRow">
+          <td id="date"></td>
+          <td id="sender"></td>
+          <td id="subjectOne"></td>
+        </tr>
+        <tr class="row" id="secondRow">
+          <td id="date"></td>
+          <td id="sender"></td>
+          <td id="subjectTwo"></td>
+        </tr>
+        <tr class="row" id="thirdRow">
+          <td id="date"></td>
+          <td id="senderThree"></td>
+          <td id="subjectThree"></td>
+        </tr>
+      </table>
+      
+    </div>
+    </div>
+    <script src="js/mail-generator.js"></script>
+  </body>
 </html>
