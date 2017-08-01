@@ -1,26 +1,50 @@
 
+.bodyStuff{
+	display: none;
+	align-content: center;
+}
+ 
+tr{
+	padding-bottom: 6px;
+	border-style: solid;
+	border-width: 1px;
+	display: block;
+	margin: auto;
+	text-align: center;
+}
 
- td{
-	border-top: 2px solid black;
-	border-left: 2px solid black;
-	border-right: 2px solid black;
-	border-width: 2px solid black;
-	border-bottom: 2px solid black;
-	padding-top: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-spacing: 10px;
+h2 { color: #F90B6D; 
+	font-family: 'Open Sans', sans-serif; 
+	font-size: 34px; 
+	font-weight: 300; 
+	line-height: 40px; 
+	margin: 0 0 16px; }
 
-};
+.expandMessage:hover{
+	font-size: 14px;
+	display:block;
+	background-color: #F90B6D;
+	transition: all 0.3s ease;
 
+}
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0; 
-};
+.newMessageBox{
+	display: block;
+	margin:auto;
+	color: red;
+}
 
-#container {
-    min-height: 100%;
-    width: 100%; 
-};
+.dates{
+	color: #F90B6D; 
+	font-family: 'Open Sans', sans-serif;
+	background-color: lightgrey;
+}
+
+.bodyStuff:first-letter{
+    display:block;
+    align-content: center;
+    float:left;
+    margin:3px;
+    color: white;
+    font-size:300%;
+}

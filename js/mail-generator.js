@@ -36,6 +36,7 @@ function getNewMessage(){
   return generateMessage(now);
 }
 
+
 function getRandomDate(){
   var year = 2013;
   var month = Math.floor(Math.random() * 12) + 1;
@@ -55,4 +56,4 @@ function getRandomDate(){
 
 
 
-
+ 
