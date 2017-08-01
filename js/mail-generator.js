@@ -35,7 +35,7 @@ function getNewMessage(){
   var now = new Date();
   return generateMessage(now);
 }
-
+console.log(getNewMessage());
 
 function getRandomDate(){
   var year = 2013;

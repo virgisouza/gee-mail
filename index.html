@@ -58,21 +58,33 @@
           buttonBox.appendChild(getMessageButton);
           var t = document.createTextNode("Message");
           getMessageButton.appendChild(t);
+          getMessageButton.addEventListener("click", showBody);
           
            var bodyContent = document.createElement("div");
             bodyContent.className = "bodyStuff";
             bodyContent.innerHTML = geemails[i].body;
             getMessageButton.appendChild(bodyContent);
 
-         var newMessageBox = document.createElement('div');
-          newMessageBox.className = "newMessageBox";
-          items.appendChild(newMessageBox);
-
 
 
         count.innerHTML++;
 
       }
+
+
+      function showBody(){
+        var bodyMessage = this.querySelectorAll(".bodyStuff")[0];
+      if(bodyMessage.style.display === "none"){
+       bodyMessage.style.display = "inline-block";
+      }else{
+       bodyMessage.style.display = "none";
+
+
+
+        }
+     }
+
+      
 
       function newMessageData(){
          var dateRow = document.createElement("tr");
@@ -116,26 +128,27 @@
           buttonBox.appendChild(getMessageButton);
           var t = document.createTextNode("Message");
           getMessageButton.appendChild(t);
+          getMessageButton.addEventListener("click", showBody);
           
            var bodyContent = document.createElement("div");
             bodyContent.className = "bodyStuff";
             bodyContent.innerHTML = geemails[i].body;
             getMessageButton.appendChild(bodyContent);
 
-         var newMessageBox = document.createElement('div');
-          newMessageBox.className = "newMessageBox";
-          items.appendChild(newMessageBox);
-
 
           count.innerHTML++;
 
-      }
-
-          var bodyElem = document.getElementsByClassName("expandMessage")
-          for(var i = 0; i<bodyElem.length; i++){
-          bodyElem[i].addEventListener("click", showBody); 
 
       }
+
+      function addNewMessage() {
+           setInterval(function(){window.geemails.push(getNewMessage());newMessageData();}, 5000);
+
+
+        }
+
+        addNewMessage();
+      
 
 
       function showBody(){
@@ -152,11 +165,6 @@
 
 
 
-function addNewMessage() {
-           setInterval(function(){window.geemails.push(getNewMessage());newMessageData();}, 3000);
-        }
-
-        addNewMessage();
 
 
 
@@ -184,7 +192,6 @@ function addNewMessage() {
     
     <div id="mainContent"></div>
 
-    <div id="items"></div>
     
 
     </div>
